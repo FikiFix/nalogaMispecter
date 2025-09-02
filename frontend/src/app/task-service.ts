@@ -14,7 +14,7 @@ export interface Tasc {
   providedIn: 'root'
 })
 export class TaskService {
-    private apiUrl = 'http://localhost:5000/api';
+    private apiUrl = 'https://nalogamispecter.onrender.com/api';
   constructor(private http: HttpClient) {}
 
   getToken(): string | null {
