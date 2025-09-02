@@ -26,7 +26,7 @@ export class TaskList {
   description = '';
     
   get title(): string | null {
-    return "Opravila - " +  localStorage.getItem('name');
+    return "Tascs - " +  localStorage.getItem('name');
   }
 
   submitTask() {
