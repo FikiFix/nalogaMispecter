@@ -26,7 +26,7 @@ export class TaskList {
   description = '';
     
   get title(): string | null {
-    return "Tascs - " +  localStorage.getItem('name');
+    return "TASKS - " +  localStorage.getItem('name');
   }
 
   submitTask() {
@@ -36,6 +36,7 @@ export class TaskList {
       this.tascs$ = this.tascService.loadTasks();
       this.tascTitle =  '';
       this.description= '';
+      this.cdr.detectChanges();
     },
     error: (err) => console.error(err)
   });
