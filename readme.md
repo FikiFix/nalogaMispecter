@@ -20,8 +20,9 @@ To je spletna aplikacija za upravljanje opravil, kjer lahko uporabniki dodajajo,
 - trudil sem se čim bolj držati standardov razvoja prog. opreme
 - gesla se v podatkovni bazi hranijo po standardu "salted hash" kar zagotavlja varnost pred vdori
 - vnosna polja so validirana proti SQL injekcijam
-- Podatkovni tok: podatkovna baza -> servis ->  kontroler -> servis > pogled
+- podatkovni tok: podatkovna baza -> servis ->  kontroler -> servis > pogled
 - za avtentifikacijo uporabljamo JWT Token
+- hosting: render.com
 
 # Ranljivosti aplikacije ki niso primerne za produkcijo: 
 - JWT Token se hrani v Local storage, kar ga izpostavi XSS napadom
