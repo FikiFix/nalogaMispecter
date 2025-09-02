@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: testUser
+      POSTGRES_PASSWORD: testPswd
+      POSTGRES_DB: testnaBaza
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ./database:/docker-entrypoint-initdb.d
+
+  backend:
+    build: ./backend
+    depends_on:
+      - db
+    env_file:
+    - ./backend/.env
+    ports:
+      - "5000:5000"
+    
+    volumes:
+      - ./backend:/app
+    command: npm run dev
+
+volumes:
+  db-data:

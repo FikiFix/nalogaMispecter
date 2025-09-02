@@ -1,0 +1,23 @@
+<div class="login-page">
+  <div class="form">
+     <div *ngIf="error" class="error-message">{{ error }}</div>
+    <form class="register-form" *ngIf="!loginToggle" (ngSubmit)="register()">
+        <input type="text" placeholder="name" [(ngModel)]="name" name="name"/>
+        <input type="password" placeholder="password" [(ngModel)]="password" name="password"/>
+        <button type="submit">create</button>
+        <p class="message">
+            Already registered ? <a href="#" (click)="toggleLogin()">Sign In</a>
+        </p>
+    </form>
+
+    <form class="login-form" *ngIf="loginToggle" (ngSubmit)="login()">
+        <input type="text" placeholder="username" [(ngModel)]="name" name="username"/>
+        <input type="password" placeholder="password" [(ngModel)]="password" name="loginPassword"/>
+        <button type="submit">login</button>
+        <p class="message">
+            Not registered? <a href="#" (click)="toggleLogin()">Create an account</a>
+        </p>
+    </form>
+
+  </div>
+</div>
